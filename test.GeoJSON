@@ -6,16 +6,23 @@
       },
   "features": [
     { "type": "Feature",
-      "properties": { "id": 1, "name": "fujisan" },
+      "properties": { },
       "geometry": {
-         "type": "Point",
-         "coordinates": [138.7309, 35.3628]
- }},
+         "type": "MultiPoint",
+         "coordinates": [[138.7309, 35.3628], [138.8079, 35.1983],[139.0248, 35.2248]]
+ }
+},
     { "type": "Feature",
-       "properties": { "id": 2, "name": "ashitakayama" },
+       "properties": { },
        "geometry": {
-          "type": "Point",
-          "coordinates": [138.8079, 35.1983]
-  }}
+          "type": "LineString",
+          "coordinates": [[138.7309, 35.3628], [138.8079, 35.1983],[139.0248, 35.2248]]
+  }},
+     { "type": "Feature",
+        "properties": { },
+        "geometry": {
+           "type": "Polygon",
+           "coordinates": [[[138.7309, 35.3628],[138.8079, 35.1983],[139.0248, 35.2248],[138.7309, 35.3628]]]
+   }}
   ]
 }
