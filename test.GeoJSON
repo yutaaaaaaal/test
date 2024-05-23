@@ -6,23 +6,28 @@
       },
   "features": [
     { "type": "Feature",
-      "properties": { },
+      "properties": { "id": 1, "name": "fujisan" },
       "geometry": {
-         "type": "MultiPoint",
-         "coordinates": [[138.7309, 35.3628], [138.8079, 35.1983],[139.0248, 35.2248]]
- }
-},
+         "type": "Point",
+         "coordinates": [138.7309, 35.3628]
+ },
+ "properties": {
+    "marker-color": "#363",
+    "marker-size": "large",
+    "title": "富士山",
+    "description":"日本一高い山"
+}},
     { "type": "Feature",
-       "properties": { },
+       "properties": { "id": 2, "name": "ashitakayama" },
        "geometry": {
-          "type": "LineString",
-          "coordinates": [[138.7309, 35.3628], [138.8079, 35.1983],[139.0248, 35.2248]]
+          "type": "Point",
+          "coordinates": [138.8079, 35.1983]
   }},
      { "type": "Feature",
-        "properties": { },
+        "properties": { "id": 3, "name": "komagatake" },
         "geometry": {
-           "type": "Polygon",
-           "coordinates": [[[138.7309, 35.3628],[138.8079, 35.1983],[139.0248, 35.2248],[138.7309, 35.3628]]]
+           "type": "Point",
+           "coordinates": [139.0248, 35.2248]
    }}
   ]
 }
