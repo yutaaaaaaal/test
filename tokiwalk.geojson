@@ -1,0 +1,40 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "check point 1",
+        "description": ""
+      },
+      "geometry": {
+        "coordinates": [35.802110, 139.950804],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "check point 2",
+        "description": ""
+      },
+      "geometry": {
+        "coordinates": [35.799516, 139.951918],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "check point 3",
+        "description": ""
+      },
+      "geometry": {
+        "coordinates": [35.799163, 139.951578],
+        "type": "Point"
+      }
+    },
+    
+    
+  ],
+  "type": "FeatureCollection"
+}
