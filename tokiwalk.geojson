@@ -7,7 +7,7 @@
         "description": ""
       },
       "geometry": {
-        "coordinates": [35.802110, 139.950804],
+        "coordinates": [35.802110,139.950804],
         "type": "Point"
       }
     },
@@ -18,7 +18,7 @@
         "description": ""
       },
       "geometry": {
-        "coordinates": [35.799516, 139.951918],
+        "coordinates": [35.799516,139.951918],
         "type": "Point"
       }
     },
@@ -29,7 +29,7 @@
         "description": ""
       },
       "geometry": {
-        "coordinates": [35.799163, 139.951578],
+        "coordinates": [35.799163,139.951578],
         "type": "Point"
       }
     }
