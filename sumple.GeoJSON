@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>トキウォーク｜TOKIWALK</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <link href="css/original.css" rel="stylesheet">
+      <link href="css/jpn.min.css" rel="stylesheet">
+      <link href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css" rel="stylesheet">
+      <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
+      <style>
+         body { margin: 0; padding: 0; }
+         img {margin: 0 auto; display:block; width:100%}
+         #map {margin: 0 auto; width: 100%; height:400px; }
+         .mapboxgl-popup {
+         max-width: 400px;
+         font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+         }
+         .mapboxgl-popup-content {
+         box-shadow: 6px 6px 6px rgba(1,1,1,.2);
+         }
+         .top_logo {max-width: 800px;}
+      </style>
+   </head>
+   <body>
+      <div class="container">
+         <div class="row mt-1"><img class="top_logo" src="img_title.png" width="100%"></div>
+         <div class="row mx-1">
+            <p>トキウォークは、ときわだいらの森にあるチェックポイントを歩いてめぐる健康プログラムです。</p>
+         </div>
+         <div id="map"></div>
+         <div class="row mx-1 mt-3">
+            <p>スマートフォンでQR を読み取り、プログラムをお楽しみください。</p>
+            <p>常盤平団地は1960年に最初の入居が始まりました。それから60年以上の時を経て、暮らしに寄り添い育まれた豊かな自然は地域の宝物となっています。</p>
+            <p>TOKIWALKは、この豊かな自然を感じながら、地域を歩くことを楽しむウォークラリーです。この取組みは、松戸市、千葉大学、都市再生機構との連携により推進しています。</p>
+         </div>
+         <!-- Footer -->
+         <footer class="mt50">
+         </footer>
+      </div>
+      <!-- Mapbox -->
+      <script>
+         mapboxgl.accessToken = 'pk.eyJ1IjoiaGFuYXphdG9tYSIsImEiOiJja2lhOWwwYjUwbmIzMnN0ZzlhMTl1Y3YxIn0.OXwoYMDsqz48eLF68xOsHA';
+            const map = new mapboxgl.Map({
+                container: 'map',
+                // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+                style: 'mapbox://styles/hanazatoma/cldl416n8000q01nbxzuc40t5',
+                center: [139.9519223, 35.7991847],
+                zoom: 15
+            });
+         
+            map.on('load', function () {
+                map.loadImage("https://wellnesstrack.app/tokiwalk/marker.png", function (error, res) {
+                    map.addImage('kw', res);
+                    }
+                    );
+                map.addSource('places', {
+                    'type': 'geojson',
+                    'data': {
+                        'type': 'FeatureCollection',
+                        'features': [
+                            {
+                                'type': 'Feature',
+                                'properties': {
+                                    'description':
+                                        '<img src="https://hpd.cpms.chiba-u.jp/Projects/KW/img/fig_id01_01.png"><p>友人や知人との交流が、要介護リスクや死亡リスクに関連しているか65歳以上の高齢者を調べた研究があります。この研究は、友人や知人と「毎日頻繫に交流する人」と比べて、「月数回しか交流しない人」では1.3～1.4倍、要介護認定や認知症に至りやすく、「月1回も交流しない人」では1.3倍死亡に至りやすいことを報告しました。</p><p>友人知人との交流が、健康によい影響を及ぼすと考えられます。最近、友人や知人と交流をしていますか？</p><p><a href="https://hpd.cpms.chiba-u.jp/Projects/KW/id/01.html">詳細はこちら</a></p>'
+                                },
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [139.95282, 35.8949]
+                                }
+                            },
+                            {
+                                'type': 'Feature',
+                                'properties': {
+                                    'description':
+                                        '<img src="https://hpd.cpms.chiba-u.jp/Projects/KW/img/fig_id03_01.png"><p>日々の買い物行動には、歩行量を増やす影響や脳の機能にいい影響があることが示唆されています。日本の高齢者49,511名を約3年間追跡し、近隣にある食料品店の数と認知症発症との関連を調べた研究があります。その結果、近隣の食料品店の数が「たくさんある」と回答した人に比べ、「ある程度ある」「あまりない」「まったくない」と回答した人の認知症リスクはそれぞれ1.2倍、1.4倍、1.7倍でした。</p><p>食料品店が多い地域に暮らす高齢者は認知症になりにくいということが分かりました。 ショッピングをすることで歩行量や脳の機能を高めましょう。</p><p><a href="https://hpd.cpms.chiba-u.jp/Projects/KW/id/03.html">詳細はこちら</a></p>'
+                                },
+                                'geometry': {
+                                    'type': 'Point',
+                                    'coordinates': [139.95116, 35.8933]
+                                }
+                            },
+                        ]
+                    }
+                });
+         
+                // Add a layer showing the places.
+                map.addLayer({
+                    'id': 'places',
+                    'type': 'symbol',
+                    'source': 'places',
+                    'layout': {
+                        'icon-image': 'kw', // reference the image
+                        'icon-size': 0.5,
+                    }
+                });
+         
+                // When a click event occurs on a feature in the places layer, open a popup at the
+                // location of the feature, with description HTML from its properties.
+                map.on('click', 'places', (e) => {
+                    // Copy coordinates array.
+                    const coordinates = e.features[0].geometry.coordinates.slice();
+                    const description = e.features[0].properties.description;
+         
+                    // Ensure that if the map is zoomed out such that multiple
+                    // copies of the feature are visible, the popup appears
+                    // over the copy being pointed to.
+                    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                    }
+         
+                    new mapboxgl.Popup()
+                        .setLngLat(coordinates)
+                        .setHTML(description)
+                        .addTo(map);
+                });
+         
+                // Change the cursor to a pointer when the mouse is over the places layer.
+                map.on('mouseenter', 'places', () => {
+                    map.getCanvas().style.cursor = 'pointer';
+                });
+         
+                // Change it back to a pointer when it leaves.
+                map.on('mouseleave', 'places', () => {
+                    map.getCanvas().style.cursor = '';
+                });
+            });
+      </script>
+   </body>
+</html>
